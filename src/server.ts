@@ -9,7 +9,7 @@ const logger = createLogger();
 
 app.use(errorHandler);
 
-app.use('/api/v1', router);
+app.use('/api/v1/owner', router);
 
 app.listen(port,()=>{
     logger.info(`Server is running on port ${port}`);
