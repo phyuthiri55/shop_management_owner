@@ -1,8 +1,8 @@
 import { Owner } from "../../../domain/entities/owner/owner.entity";
 import { AppError } from "../../errors/app-error";
-import { OwnerRepository } from "../../interface/owner-repositories/i-owner-repository";
+import { OwnerRepository } from "../../interface/repositories/owner-repositories/i-owner-repository";
 import { HashPassword } from "../../../infrastructure/util/hash-password.util";
-import { CreateOwnerDto } from "../../interface/dtos/create-owner.dto";
+import { CreateOwnerDto } from "../../interface/dtos/owner/create-owner.dto";
 import { createLogger } from "../../../infrastructure/logger/create-logger";
 
 

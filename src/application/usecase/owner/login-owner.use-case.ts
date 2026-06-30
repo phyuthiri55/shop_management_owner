@@ -1,9 +1,9 @@
 import {AppError} from "../../errors/app-error";
-import {OwnerRepository} from "../../interface/owner-repositories/i-owner-repository";
+import {OwnerRepository} from "../../interface/repositories/owner-repositories/i-owner-repository";
 import {HashPassword} from "../../../infrastructure/util/hash-password.util";
-import {LoginOwnerDto} from "../../interface/dtos/login-owner.dto";
+import {LoginOwnerDto} from "../../interface/dtos/owner/login-owner.dto";
 import {TokenService} from "../../interface/service/i-token-service";
-import {LoginResponseOwnerDto} from "../../interface/dtos/login-response.dto";
+import {LoginResponseOwnerDto} from "../../interface/dtos/owner/login-response.dto";
 import { createLogger } from "../../../infrastructure/logger/create-logger";
 
 const logger = createLogger();

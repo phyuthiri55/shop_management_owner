@@ -1,5 +1,5 @@
 import { Owner } from "../../../../domain/entities/owner/owner.entity";
-import { OwnerRepository } from "../../../../application/interface/owner-repositories/i-owner-repository";
+import { OwnerRepository } from "../../../../application/interface/repositories/owner-repositories/i-owner-repository";
 import { pool } from "../../../database/mysql";
 
 export class MySQLOwnerRepositories implements OwnerRepository{

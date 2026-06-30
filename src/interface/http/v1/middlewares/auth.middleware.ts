@@ -1,7 +1,7 @@
 import {Request,Response,NextFunction} from 'express';
 import {AppError} from '../../../../application/errors/app-error';
 import { TokenService } from '../../../../application/interface/service/i-token-service';
-import {OwnerRepository} from '../../../../application/interface/owner-repositories/i-owner-repository';
+import {OwnerRepository} from '../../../../application/interface/repositories/owner-repositories/i-owner-repository';
 
 
 export class AuthMiddleware{

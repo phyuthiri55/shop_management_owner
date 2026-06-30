@@ -1,5 +1,5 @@
 import Router from "express";
-import { ownerController } from "../../../../../container/auth.container";
+import { ownerController } from "../../../../../container/owner/auth.container";
 
 const router = Router();
 

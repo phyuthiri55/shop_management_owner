@@ -1,4 +1,4 @@
-import { Owner } from "../../../domain/entities/owner/owner.entity";
+import { Owner } from "../../../../domain/entities/owner/owner.entity";
 
 export interface OwnerRepository{
 

@@ -5,6 +5,9 @@ declare global {
         interface Request {
             owner?: Owner;
         }
+        interface Multer{
+            File: any
+        }
     }
 }
 
