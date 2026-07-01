@@ -14,7 +14,6 @@ export class CreateShopUseCase{
         const shop = await this.shopRepository.create(data);
 
         if(!shop)throw new AppError("Can not create shop",401);
-
         
         return new Shop(shop.id,shop.name,shop.branch_image_url,shop.branch_public_id,shop.address,shop.phone,shop.manager_name)
     }

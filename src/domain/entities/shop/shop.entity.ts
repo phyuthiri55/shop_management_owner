@@ -6,7 +6,7 @@ export class Shop{
         public branch_image_url : string,
         public branch_public_id : string,
         public address : string,
-        public phone : number,
+        public phone : string,
         public manager_name : string
     ){}
 

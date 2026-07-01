@@ -1,8 +1,8 @@
 
 export interface CreateShopDto{
     name: string;
-    file: File;
+    file: Express.Multer.File;
     address: string;
     manager_name: string;
-    phone: number
+    phone: string
 }

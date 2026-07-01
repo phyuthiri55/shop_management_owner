@@ -2,6 +2,7 @@ import { Shop } from "../../../../../domain/entities/shop/shop.entity";
 import { CreateShopUseCase } from "../../../../../application/usecase/shop/create-shop.use-case";
 import { AppError } from "../../../../../application/errors/app-error";
 import { Request,Response,NextFunction } from "express";
+import { createLogger } from "../../../../../infrastructure/logger/create-logger";
 
 
 export class ShopController{
@@ -16,11 +17,16 @@ export class ShopController{
 
             const file = (req as any).file;
 
+            const logger =createLogger();
+
+
             if(!file) throw new AppError('Enter the file',400);
 
             const {name,address,phone,manager_name} = req.body;
 
             if(!name || !address || !phone || !manager_name)throw new AppError("Enter the Data",400);
+
+
 
             const data = {
                 name,

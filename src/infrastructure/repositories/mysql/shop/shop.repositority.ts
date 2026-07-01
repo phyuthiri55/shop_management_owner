@@ -3,18 +3,23 @@ import { ShopRepository } from "../../../../application/interface/repositories/s
 import { pool } from "../../../database/mysql";
 import { AppError } from "../../../../application/errors/app-error";
 import { uploadImage } from "../../../../services/image.service";
+import { createLogger } from "../../../logger/create-logger";
+
+const logger = createLogger();
 
 export class MySQLShopRepository implements ShopRepository{
 
-    async create(data: { name: string; file: File; address: string; manager_name: string; phone: number; }): Promise<Shop> {
+    async create(data: { name: string; file: Express.Multer.File; address: string; manager_name: string; phone: string; }): Promise<Shop> {
         
         let shop_image_url : string = "";
-        let shop_public_id : string = "";
+        let shop_public_id : string = ""; 
+        
 
         if(data.file){
             const imageResult = await uploadImage(data.file,"Branch_image");
-            shop_image_url = imageResult.image_url;
-            shop_public_id = imageResult.public_id;
+            shop_image_url = imageResult.data.image_url;
+            shop_public_id = imageResult.data.public_id;
+            
         }
 
         const [result] : any = await pool.query('insert into branchs (name,branch_image_url,branch_public_id,address,phone,manager_name) values (?,?,?,?,?,?)',
